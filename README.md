@@ -10,6 +10,10 @@
 
 ---
 
+"Developed via a custom-built real-time PRNG tester. Optimized down to 3 lines of code using 32-bit integer arithmetic and Weyl sequences for maximum throughput in V8."
+
+---
+
 ## 🚀 Features / 特徴
 
 - **Ultra Minimalist** — Core algorithm is only 3 lines long  
@@ -43,4 +47,5 @@ next() {
     let s = (this.state = (this.state + 0x9E3779B9) | 0);           // Golden ratio increment
     s = Math.imul(s, (s << 16) | (s >>> 16));                       // Self-rotated multiplication
     return (s ^= s >>> 16) >>> 0;                                   // Final whitening
+
 }
