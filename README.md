@@ -46,6 +46,7 @@ PhiZ is built on three original, tightly integrated steps:
 next() {
     let s = (this.state = (this.state + 0x9E3779B9) | 0);           // Golden ratio increment
     s = Math.imul(s, (s << 16) | (s >>> 16));                       // Self-rotated multiplication
-    return (s ^= s >>> 16) >>> 0;                                   // Final whitening
+    return (s ^= s >>> 15) >>> 0;                                   // Final whitening
 
 }
+
